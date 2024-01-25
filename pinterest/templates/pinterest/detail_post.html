@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+{% block title %}
+ POSTY
+{% endblock title %}
+{% block content %}
+
+ <div class="post" style="text-align: center;">
+     <img src="{{ post.img.url }}" style="border-radius: 30px;" >
+     <h1 style="text-align: center;">NAME :{{ post.name }}</h1>
+     <h3 style="text-align: center;">DESCRIPTIONS :{{ post.descriptions }}</h3>
+     <h1>USER:{{ post.author }}</h1>
+     <p>DATE :{{ post.date }}</p>
+</div>
+{% if request.user == post.author %}
+    <a href="{% url 'post_edit' post.pk %}">edit</a>
+    <a href= "{% url 'post_delete' post.pk %}">delete</a>
+{% endif %}
+{% endblock content %}

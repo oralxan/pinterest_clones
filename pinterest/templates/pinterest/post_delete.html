@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% block title %}
+ NEW
+{% endblock title %}
+{% block content %}
+<h1>delete post</h1>
+ <div class="post">
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="delete">
+    </form>
+
+
+
+</div>
+{% endblock content %}

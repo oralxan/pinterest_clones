@@ -1,0 +1,80 @@
+
+{% extends '_base.html' %}
+{% block title %}
+YOUR LOVER POSTS
+{% endblock title %}
+{% block css %}
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 1500px;
+        margin: 20px auto;
+        columns: 6;
+        column-gap: 30px;
+    }
+    .container .post{
+        width: 100%;
+        margin-bottom: 30px;
+
+    }
+    .container .post img{
+        max-width: 100%;
+        border-radius: 10px;
+        break-inside: avoid;
+    }
+    @media (max-width : 1200px)
+    {
+        .container
+        {
+            width: calc(100% -40px);
+            columns: 3;
+            
+        }
+    }
+    @media (max-width : 768px)
+    {
+        .container
+        {
+            columns: 2;
+        }
+    }
+    @media (max-width : 480px)
+    {
+        .container
+        {
+            columns: 1;
+        }
+    }
+</style>
+{% endblock css %}
+{% block content %}
+<!--  -->
+
+
+
+
+<div style="float: right; margin:0 10px; padding: 0  3px;">
+    <h1><a href="{% url 'my_post' %}"><i class="fa-solid fa-user" style="color: #c9200d;"></i></a></h1>
+</div>
+
+ 
+
+
+
+<div class="container">
+    {% for post in posts %}
+        <div class="post">
+            <a href="{% url 'post_detail' post.pk %}">
+                <img src="{{ post.img.url }}" class="box">
+            </a>
+        </div>
+    {% endfor %}         
+
+</div>
+{% endblock content %}
+
+

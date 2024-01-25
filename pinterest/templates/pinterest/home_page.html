@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% block title %}
+YOUR HOMEPIN
+{% endblock title %}
+{% block css %}
+<style>
+    .id{
+        margin: 200px;
+        text-align: center;
+        font-family: crossorigin
+    }
+    .pin{
+        text-decoration: none;
+        color: black;
+    }
+
+
+</style>
+{% endblock css %}
+{% block content %}
+<a href="{% url 'post_list' %}" class="pin">
+<h1 class="id" font-family: crossorigin><i class="fa-brands fa-pinterest" style="color: #de1717;;"></i>Pinterest</h1>
+</a>
+
+  
+{% endblock content %}

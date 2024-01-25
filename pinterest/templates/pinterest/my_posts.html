@@ -1,0 +1,53 @@
+{% extends '_base.html' %}
+{% block title %}
+ Postys
+{% endblock title %}
+{% block content %}
+<h1 style="text-align: center;">Your Account:{{ request.user.username }}</h1>
+{% block css %}
+    <style>
+        .name {
+            width: 100%;
+            text-align: center;
+        }     
+    
+        .dib{
+            float: right;
+            
+        }
+        .imgg{
+            border-radius: 50px;
+        }
+        
+    </style>
+{% endblock css %}
+
+<div class="dib">
+
+     {% if user.is_authenticated %}
+     <a>{{ user.username }}</a>|
+     <a href="{% url 'logout' %}" style="color:#dd1d1d; text-decoration: none;"><i class="fa-solid fa-right-from-bracket" style="color: #e01a1a;"></i>Logout</a>
+     
+      
+    {% else %}
+     <a href="{% url 'login' %}" style="text-decoration: none; color: #dd1d1d;" >LogIn</a>|
+     <a href="{% url 'signup' %}"><i class="fa-solid fa-user-plus" style="color: #dd1d1d;">Signup</i></a>
+  {% endif %}
+  
+   
+</div>
+    
+        <h3 class="name">{{ current_account.name }}</h3>
+        <h2 id="your-posts" style="text-align: center;">Your posts:</h2>
+
+        <div class="container">
+            {% for post in post %} 
+                <a href="/posts/{{post.id}}"><img class="imgg" src="{{post.img.url}}"></a>
+            {% endfor %}
+        </div>
+
+        </div>
+    
+
+{% endblock content %}
+
