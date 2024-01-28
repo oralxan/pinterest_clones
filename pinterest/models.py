@@ -22,6 +22,7 @@ class Post(Model):
     date = DateField(
         'date of the post'
     )
+
     
   
    

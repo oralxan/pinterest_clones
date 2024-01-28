@@ -1,8 +1,94 @@
-<div class="header" style="display: flex;" >
+
+    <div class="header">
+        <div class="log">
+            <i class="fa-brands fa-pinterest" style="color: #f00f0f;"></i>
+        </div>
+            <div class="links">
+                <a href="{% url 'post_list' %}">Post</a>
+                <a href="{% url 'post_create' %}">Create</a>
+            </div>
+            <div class="search" style="display: flex;">
+                <form action="{% url 'post_list' %}" method="GET">
+                    <input type="text" placeholder="Search" name="search">
+                </form>
+            </div>
+            
+            
+            <div class="icons">
+                <i class="fa-solid fa-bell" style="color: #000000;"></i>
+                <i class="fa-solid fa-comment-dots" style="color: #000000;"></i>
+                <a href="{% url 'my_post' %}"><i class="fa-solid fa-circle-user" style="color: #00040a;"></i></a>
+            </div>
+           
+
+        </div> 
+
     
 
-   <h1><a href="{% url 'post_list' %}"><i class="fa-brands fa-pinterest" style="color: #f00f0f;"></i></a></h1>
+   <!-- <h1><a href="{% url 'post_list' %}"><i class="fa-brands fa-pinterest" style="color: #f00f0f;"></i></a></h1>
     <a href="{% url 'post_list' %}" style="text-decoration: none; color: #f00f0f;">post</a>|
     <a href="{% url 'post_create' %}" style="text-decoration: none; color: #f00f0f;">Create</a>
-    
-</div>
+     -->
+
+     <style>
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 120px;
+            box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+        }
+        .log i{
+            font-size: 30px;
+
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .links a{
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .search{
+          display: flex;
+          width: 800px;  
+          height:55px ;
+          background: #e4e4e4;
+          border-radius: 80px;
+          padding: 0 20px;
+        }
+        .search i{
+            color: #555;
+            display: flex;
+            
+        }
+        .search input{
+            border: none;
+            background: transparent;
+            width: 80%;
+            height: 100%;
+            outline: none;
+            padding: 0 10px;
+            font-size: 16px;
+            margin: 0 10px;
+
+        }
+        .icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icons i{
+            font-size: 26px;
+            color: #333;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+     </style>
+  
+        

@@ -4,4 +4,5 @@ from .models import Post
 class PostAdmin(ModelAdmin):
     list_display = ('id','name','date')
     list_display_links =('id','name','date')
-    search_fields = ['name']
+    search_fields = ['name', 'descriptions', 'author__username']
+  

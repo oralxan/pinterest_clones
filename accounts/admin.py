@@ -6,5 +6,5 @@ from .models import Author
 class AuthorAdmin(ModelAdmin):
     list_display = ('id', 'author')
     list_display_links = ('id', 'author')
-    search_fields = ('author',)
+    search_fields = ['author__istartswith','fating']
     ordering = ('author',)

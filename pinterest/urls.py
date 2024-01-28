@@ -1,11 +1,10 @@
 from django.urls import path
-from pinterest.views import post_list,home_page,post_detail,post_create,post_edit,post_delete,my_post,TitleDescriptionResulsView,signup,LoginPage
+from pinterest.views import post_list,home_page,post_detail,post_create,post_edit,post_delete,my_post,signup,LoginPage
 
 
 
 urlpatterns = [
     path('', home_page, name='home_page'),
-    path('posts/search_results', TitleDescriptionResulsView.as_view(), name='search_results'),
     path('posts/', post_list, name='post_list'),
     path('posts/<int:pk>/', post_detail, name='post_detail'),
     path('posts/new/', post_create,name='post_create'),
@@ -15,8 +14,11 @@ urlpatterns = [
     path('signup/',signup,name='signup'),
     path('login/',LoginPage,name='LoginPage'),
 
-
-
 ]
+
+    
+
+
+
 
 
