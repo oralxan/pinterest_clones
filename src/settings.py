@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,6 +32,9 @@ INSTALLED_APPS = [
     'accounts',
     'django_cleanup'
 ]
+JAZZMIN_SETTINGS = {
+    'show_ui_builder':True
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
